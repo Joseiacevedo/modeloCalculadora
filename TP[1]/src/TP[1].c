@@ -104,7 +104,7 @@ int main(void)
 				{
 					case 1:
 
-						numero1 = PedirEntero("Ingrese el primero operando: \n");
+						numero1 = PedirEntero("Ingrese el primer operando: \n");
 						fflush(stdin);
 						flagNum1 = 1;
 						break;
@@ -126,7 +126,7 @@ int main(void)
 							multiplicacion = Multiplicacion(numero1, numero2);
 							factorial1 = CalcularFactorial(numero1);
 							factorial2 = CalcularFactorial(numero2);
-							printf("\n>>>>Los numeros ya fueron calculados<<<<\n");
+							printf("\n>>>>LOS NUMEROS YA HAN SIDO CALCULADOS<<<<\n");
 							flagCalculos = 1;
 						}
 						else
@@ -156,7 +156,7 @@ int main(void)
 						}
 						else
 						{
-							printf("\n>>>>ERROR, para conocer los resultados primero debe cargar los operadores, luego calcularlos y ahi podra tener resultados<<<<\n");
+							printf("\n>>>>ERROR, para conocer los resultados primero debe cargar los operadores, luego calcularlos y ahi podra mostrar los resultados<<<<\n");
 						}
 						break;
 					case 5: printf("Salida\n");
