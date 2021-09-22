@@ -1,20 +1,22 @@
+
+
 #include "Biblioteca.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 
-float PedirEntero(char mensaje[])
+float PedirNumero(char mensaje[])
 {
-	float numeroEntero;
+	float numero;
 
 	  printf("%s",mensaje);
-	  scanf("%f",&numeroEntero);
+	  scanf("%f",&numero);
 
 
-	  return numeroEntero;
+	  return numero;
 
 }
-int ValidarEntero(int numeroIngresado)
+int ValidarNumero(int numeroIngresado)
 {
 	int retorno;
 	retorno = 0;
@@ -51,8 +53,8 @@ float Resta(float num1, float num2)
 float Division(float num1, float num2,float* retorno)
 {
 	float resultado;
-	int error;
-	error = 0;
+	int auxDivision;
+	auxDivision = 0;
 
 
 
@@ -61,9 +63,9 @@ float Division(float num1, float num2,float* retorno)
 		resultado = num1 / num2;
 		(*retorno) = resultado;
 
-		error = 1;
+		auxDivision = 1;
 	}
-	return error;
+	return auxDivision;
 }
 float Multiplicacion(float num1, float num2)
 {
@@ -92,3 +94,11 @@ int CalcularFactorial(float num1)
 	return resultado;
 
 }
+
+
+
+
+
+
+
+
