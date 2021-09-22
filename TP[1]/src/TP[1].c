@@ -5,9 +5,9 @@
  Version     : 1.0
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
- ProgramaciÛn I ñ Laboratorio I
+ Programaci√≥n I ‚Äì Laboratorio I
 1 Enunciado
-Hacer una calculadora. Para ello el programa iniciar· y contar· con un men˙ de opciones:
+Hacer una calculadora. Para ello el programa iniciar√° y contar√° con un men√∫ de opciones:
 1. Ingresar 1er operando (A=x)
 2. Ingresar 2do operando (B=y)
 3. Calcular todas las operaciones
@@ -17,26 +17,26 @@ c) Calcular la division (A/B)
 d) Calcular la multiplicacion (A*B)
 e) Calcular el factorial (A!)
 4. Informar resultados
-a) ìEl resultado de A+B es: rî
-b) ìEl resultado de A-B es: rî
-c) ìEl resultado de A/B es: rî o ìNo es posible dividir por ceroî
-d) ìEl resultado de A*B es: rî
-e) ìEl factorial de A es: r1 y El factorial de B es: r2î
+a) ‚ÄúEl resultado de A+B es: r‚Äù
+b) ‚ÄúEl resultado de A-B es: r‚Äù
+c) ‚ÄúEl resultado de A/B es: r‚Äù o ‚ÄúNo es posible dividir por cero‚Äù
+d) ‚ÄúEl resultado de A*B es: r‚Äù
+e) ‚ÄúEl factorial de A es: r1 y El factorial de B es: r2‚Äù
 5. Salir
-ï Todas las funciones matem·ticas del men˙ se deber·n realizar en una biblioteca aparte,
+‚Ä¢ Todas las funciones matem√°ticas del men√∫ se deber√°n realizar en una biblioteca aparte,
 que contenga las funciones para realizar las cinco operaciones.
-ï En el men˙ deber·n aparecer los valores actuales cargados en los operandos A y B
-(donde dice ìxî e ìyî en el ejemplo, se debe mostrar el n˙mero cargado)
-ï Deber·n contemplarse los casos de error (divisiÛn por cero, etc)
-ï Documentar todas las funciones
-2 CÛmo realizar y entregar el trabajo pr·ctico
-El trabajo pr·ctico deber· ser entregado en el repositorio de GIT correspondiente al TP1 de la
+‚Ä¢ En el men√∫ deber√°n aparecer los valores actuales cargados en los operandos A y B
+(donde dice ‚Äúx‚Äù e ‚Äúy‚Äù en el ejemplo, se debe mostrar el n√∫mero cargado)
+‚Ä¢ Deber√°n contemplarse los casos de error (divisi√≥n por cero, etc)
+‚Ä¢ Documentar todas las funciones
+2 C√≥mo realizar y entregar el trabajo pr√°ctico
+El trabajo pr√°ctico deber√° ser entregado en el repositorio de GIT correspondiente al TP1 de la
 materia.
-El mismo consistir· en el proyecto de CodeBlocks con el programa funcionando y comentado,
-respetando las reglas de estilo de la c·tedra. La compilaciÛn no deber· arrojar mensajes de
+El mismo consistir√° en el proyecto de CodeBlocks con el programa funcionando y comentado,
+respetando las reglas de estilo de la c√°tedra. La compilaci√≥n no deber√° arrojar mensajes de
 error ni de warnings.
-El proyecto deber· contar con la biblioteca descripta en la secciÛn n˙mero dos, y se deber·
-hacer uso de dichas funciones para resolver la lÛgica del programa.
+El proyecto deber√° contar con la biblioteca descripta en la secci√≥n n√∫mero dos, y se deber√°
+hacer uso de dichas funciones para resolver la l√≥gica del programa.
 
  ============================================================================
  */
@@ -58,8 +58,8 @@ int main(void)
 		float suma;
 		float resta;
 		float division;
-		int error;
-		error = 0;
+		int auxDivision;
+		auxDivision = 0;
 		float multiplicacion;
 		float factorial1;
 		float factorial2;
@@ -95,7 +95,7 @@ int main(void)
 		printf("Ingrese la opcion: \n");
 		scanf("%d",&opcion);
 		fflush(stdin);
-		ValidarEntero(opcion);
+		ValidarNumero(opcion);
 
 
 
@@ -104,14 +104,14 @@ int main(void)
 				{
 					case 1:
 
-						numero1 = PedirEntero("Ingrese el primer operando: \n");
+						numero1 = PedirNumero("Ingrese el primer operando: \n");
 						fflush(stdin);
 						flagNum1 = 1;
 						break;
 
 					case 2:
 
-						numero2 = PedirEntero("Ingrese el segundo operando: \n");
+						numero2 = PedirNumero("Ingrese el segundo operando: \n");
 						fflush(stdin);
 						flagNum2 = 1;
 						break;
@@ -122,7 +122,7 @@ int main(void)
 						{
 							suma = Suma(numero1, numero2);
 							resta = Resta(numero1, numero2);
-							error = Division(numero1, numero2,&division);
+							auxDivision = Division(numero1, numero2,&division);
 							multiplicacion = Multiplicacion(numero1, numero2);
 							factorial1 = CalcularFactorial(numero1);
 							factorial2 = CalcularFactorial(numero2);
@@ -141,7 +141,7 @@ int main(void)
 						{
 							printf("El resultado de A + B es:  %.2f\n",suma);
 							printf("El resultado de A - B es: %.2f\n",resta);
-							if(error != 0)
+							if(auxDivision != 0)
 							{
 								printf("El resultado de A / B es: %.2f\n",division);
 							}
@@ -171,12 +171,5 @@ int main(void)
 		return 0;
 
 }
-
-
-
-
-
-
-
 
 
